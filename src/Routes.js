@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Switch, Route } from "react-router-dom";
+import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import ColorList from "./ColorList";
 import FilterColorPage from "./FilterColorPage";
 import ColorAdd from "./ColorAdd";
@@ -20,11 +20,14 @@ function Routes() {
   }
 
   return (
-    <Switch>
-      <Route exact path="/colors/new"><ColorAdd addColor={addColor}/></Route>
-      <Route exact path="/colors/:color"><FilterColorPage colors={colors}/></Route>
-      <Route exact path="/colors"><ColorList colors={colors}/></Route>
-    </Switch>
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/colors/new"><ColorAdd addColor={addColor}/></Route>
+        <Route exact path="/colors/:color"><FilterColorPage colors={colors}/></Route>
+        <Route exact path="/colors"><ColorList colors={colors}/></Route>
+        <Redirect to="/colors" />
+      </Switch>
+    </BrowserRouter>
   )
 }
 

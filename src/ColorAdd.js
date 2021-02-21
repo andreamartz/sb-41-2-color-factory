@@ -6,6 +6,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
+import "./ColorAdd.css";
 
 function ColorAdd({ addColor }) {
   const INITIAL_STATE = { colorName: "black", colorValue: "#000000"};
@@ -18,7 +19,6 @@ function ColorAdd({ addColor }) {
     addColor(colorName, colorValue);
     setFormData(INITIAL_STATE);
     history.push("/colors");
-    
   };
   const handleChange = (evt) => {
     const { name, value } = evt.target;
@@ -26,31 +26,36 @@ function ColorAdd({ addColor }) {
   };
 
   return (
-    <>
+    <div className="ColorAdd">
       <h1>Add a color</h1>
-      <form className="ColorAdd" onSubmit={handleSubmit}>
-        <label htmlFor="colorName">Name of color</label>
-        <input 
-          onChange={handleChange} 
-          type="text" 
-          id="colorName" 
-          name="colorName" 
-          placeholder="color name" 
-          value={formData.colorName}
-        />
-        <label htmlFor="colorValue">Select a color value</label>
-        <input 
-          onChange={handleChange} 
-          type="color" 
-          id="colorValue" 
-          name="colorValue" 
-          placeholder="color hex code" 
-          value={formData.colorValue}
-        />
-        <button>Add</button>
+      <form className="ColorAdd-form" onSubmit={handleSubmit}>
+        <div>
+          <label htmlFor="colorName">Name of color</label>
+          <input 
+            onChange={handleChange} 
+            type="text" 
+            id="colorName" 
+            name="colorName" 
+            placeholder="color name" 
+            value={formData.colorName}
+          />
+        </div>
+        <div>
+          <label htmlFor="colorValue">Select a color value</label>
+          <input 
+            onChange={handleChange} 
+            type="color" 
+            id="colorValue" 
+            name="colorValue" 
+            placeholder="color hex code" 
+            value={formData.colorValue}
+          />
+        </div>
+        <div>
+          <button className="ColorAdd-AddButton">Add</button>
+        </div>
       </form>
-      <button><Link to="/colors">Home</Link></button>
-    </>
+    </div>
   )
 }
 

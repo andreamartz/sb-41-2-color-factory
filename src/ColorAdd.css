@@ -1,0 +1,28 @@
+.ColorAdd {
+  height: 100vh;
+  background: linear-gradient(to right bottom, red 0%, orange 25%, yellow 50%, green 75%, blue 100%);
+}
+
+.ColorAdd-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h1 {
+  margin: 0;
+}
+
+label {
+  display: inline-block;
+  align-items: center;
+  padding: 5px;
+}
+
+.ColorAdd-AddButton {
+  padding: 5px;
+}
+
+.ColorAdd-HomeButton {
+  margin-top: 10px;
+}

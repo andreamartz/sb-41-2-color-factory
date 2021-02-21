@@ -1,8 +1,9 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import ColorPage from "./ColorPage";
 
 function FilterColorPage({ colors }) {
+  const history = useHistory();
   const { color } = useParams();
   const [ colorToShow ] = colors.filter(c => c.name === color);
   console.log("COLORTOSHOW: ", colorToShow);
@@ -14,11 +15,8 @@ function FilterColorPage({ colors }) {
       </>
     )
   } else {
-    return (
-      <>
-        <p>That is not a thing</p>
-      </>
-    )
+    history.push("/colors");
+    return null;
   }
 }
 

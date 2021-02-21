@@ -7,7 +7,7 @@ function ColorList({ colors }) {
   return (
     <div className="ColorList">
       <h1>Welcome to the Color Factory!</h1>  
-      <Link to="/colors/new"><button>Add a color.</button></Link>
+      <Link to="/colors/new"><button>Add a color</button></Link>
       <p>Please select a color.</p>
       <ul className="ColorList-ul" id="ColorList-ul">
         {links}
