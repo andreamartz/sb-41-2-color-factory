@@ -4,11 +4,11 @@ import { BrowserRouter } from "react-router-dom";
 import './App.css';
 
 function App() {
-  const colors = ["green", "blue", "purple"];
+
   return (
     <div className="App">
       <BrowserRouter>
-        <Routes colors={colors}/>      
+        <Routes />      
       </BrowserRouter>
     </div>
   );

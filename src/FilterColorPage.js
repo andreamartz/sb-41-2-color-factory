@@ -4,7 +4,8 @@ import ColorPage from "./ColorPage";
 
 function FilterColorPage({ colors }) {
   const { color } = useParams();
-  const [ colorToShow ] = colors.filter(c => c === color);
+  const [ colorToShow ] = colors.filter(c => c.name === color);
+  console.log("COLORTOSHOW: ", colorToShow);
   
   if (colorToShow) {
     return (
